@@ -4,7 +4,7 @@ import socket
 class Network:
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server = "YOUR LOCAL IPV4"
+        self.server = "192.168.0.166"
         self.port = 5555
         self.addr = (self.server, self.port)
         self.pos = self.connect()
@@ -16,8 +16,8 @@ class Network:
         try:
             self.client.connect(self.addr)
             return self.client.recv(2048).decode()
-        except:
-            pass
+        except Exception as e:
+            str(e)
 
     def send(self, data):
         try:
