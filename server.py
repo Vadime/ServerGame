@@ -3,13 +3,14 @@ from _thread import *
 import pickle
 from game import Game
 
-server = "2a02:810a:11bf:c278:8084:c239:f40e:b1a"
+local_server = "192.168.0.166"
+global_server = "95.90.180.186"
 port = 5555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
-    s.bind((server, port))
+    s.bind((local_server, port))
 except socket.error as e:
     str(e)
 
